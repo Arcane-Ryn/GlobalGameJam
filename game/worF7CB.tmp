@@ -1,13 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=9 format=3 uid="uid://byr510ght4f1m"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
 [ext_resource type="Texture2D" uid="uid://dy5wrnjbbq7f" path="res://sprites/DS.jpg" id="2_42tfj"]
 [ext_resource type="Script" path="res://scripts/move.gd" id="2_jxtjc"]
 [ext_resource type="Script" path="res://scripts/throw.gd" id="4_wj5jx"]
-[ext_resource type="Texture2D" uid="uid://5mtesb0lr7x1" path="res://sprites/thumbnail_Untitled_Artwork.png" id="6_u1sh0"]
-[ext_resource type="Script" path="res://scripts/change.gd" id="7_b1qdf"]
-[ext_resource type="Texture2D" uid="uid://ccmgufsohg7k" path="res://sprites/thumbnail_Untitled_Artwork 2.png" id="7_h2trf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l17ac"]
 size = Vector2(56, 46)
@@ -19,20 +16,19 @@ size = Vector2(1090, 177)
 size = Vector2(71, 91)
 
 [node name="World" type="Node2D"]
-position = Vector2(101, 25)
+position = Vector2(-24, -19)
 script = ExtResource("1_4asem")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(473, 252)
-position_smoothing_enabled = true
-position_smoothing_speed = 6.0
-
 [node name="player" type="Node2D" parent="."]
-top_level = true
-position = Vector2(574, 370)
+position = Vector2(476, 277)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="player"]
 script = ExtResource("2_jxtjc")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="player/CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/CharacterBody2D"]
@@ -65,7 +61,6 @@ metadata/_edit_lock_ = true
 position = Vector2(1026, 358)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="death"]
-position = Vector2(-1720, 334)
 script = ExtResource("4_wj5jx")
 
 [node name="Sprite2D" type="Sprite2D" parent="death/CharacterBody2D"]
@@ -74,19 +69,4 @@ texture = ExtResource("1_rnhnd")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="death/CharacterBody2D"]
-position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_ca0bp")
-metadata/_edit_lock_ = true
-
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(473, 210)
-scale = Vector2(1, 0.6)
-texture = ExtResource("6_u1sh0")
-script = ExtResource("7_b1qdf")
-metadata/_edit_lock_ = true
-
-[node name="ground" type="Sprite2D" parent="."]
-position = Vector2(439, 505)
-scale = Vector2(1.5, 0.297)
-texture = ExtResource("7_h2trf")
-metadata/_edit_lock_ = true
