@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=15 format=3 uid="uid://byr510ght4f1m"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
 [ext_resource type="Texture2D" uid="uid://dy5wrnjbbq7f" path="res://sprites/DS.jpg" id="2_42tfj"]
 [ext_resource type="Script" path="res://scripts/move.gd" id="2_jxtjc"]
-[ext_resource type="Script" path="res://pl_overlap.gd" id="4_jnquv"]
 [ext_resource type="Script" path="res://scripts/throw.gd" id="4_wj5jx"]
 [ext_resource type="Script" path="res://scripts/bul_overlap.gd" id="6_o6hdq"]
 [ext_resource type="Texture2D" uid="uid://5mtesb0lr7x1" path="res://sprites/thumbnail_Untitled_Artwork.png" id="6_u1sh0"]
@@ -26,16 +25,12 @@ size = Vector2(68, 91)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ak7m"]
 size = Vector2(70, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq4rj"]
-size = Vector2(1269.33, 680.135)
-
 [node name="World" type="Node2D"]
 position = Vector2(101, 25)
 script = ExtResource("1_4asem")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(473, 252)
-zoom = Vector2(1.6, 1.6)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
@@ -57,7 +52,6 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_1mrhx")
 
 [node name="Area2D" type="Area2D" parent="player/CharacterBody2D"]
-script = ExtResource("4_jnquv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/CharacterBody2D/Area2D"]
 position = Vector2(0.5, 0)
@@ -115,9 +109,3 @@ position = Vector2(439, 505)
 scale = Vector2(1.5, 0.297)
 texture = ExtResource("7_h2trf")
 metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ground"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/StaticBody2D"]
-position = Vector2(44.0001, 50.505)
-shape = SubResource("RectangleShape2D_wq4rj")
