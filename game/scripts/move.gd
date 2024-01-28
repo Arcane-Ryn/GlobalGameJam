@@ -9,6 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var right = "ui_right"
 var left = "ui_left"
 var jump = "ui_accept"
+var anim_count = 1
+var count = 3
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -23,9 +25,19 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(left, right)
+	var sprite = get_node("Sprite2D")
 	if direction:
 		velocity.x = direction * SPEED
+		if count == 0:
+			if anim_count < 6:
+				anim_count += 1
+			else:
+				anim_count = 1
+			sprite.texture = load("res://animations/C" + str(anim_count) + ".PNG")
+			count = 3
+		count -= 1
 	else:
+		sprite.texture = load("res://animations/C1.PNG")
 		velocity.x = move_toward(velocity.x, 0, 50)
 	
 	move_and_slide()
