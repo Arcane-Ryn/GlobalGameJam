@@ -23,7 +23,13 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(left, right)
 	if direction:
-		velocity.x = direction * SPEED
+		#if position.x > 500 || position.x < -400:
+			#velocity.x =0
+		if position.x < 50 && direction >0:
+			velocity.x = direction * SPEED
+		#elif position.x > -400 && direction <0:
+			#velocity.x = direction * SPEED
+	
 	else:
 		velocity.x = move_toward(velocity.x, 0, 50)
 	
@@ -31,9 +37,9 @@ func _physics_process(delta):
 
 func freeze():
 	var hold = [right, left, jump]
-	right = "1"
-	left = "1"
-	jump = "1"
+	right = "no"
+	left = "no"
+	jump = "no"
 	await get_tree().create_timer(0.5).timeout
 	right = hold[0]
 	left = hold[1]
