@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=24 format=3 uid="uid://dhull8bn4offe"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
@@ -33,6 +33,36 @@ size = Vector2(70, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wq4rj"]
 size = Vector2(1269.33, 680.135)
+
+[sub_resource type="GDScript" id="GDScript_gp0hx"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_bt5v6"]
+script/source = "extends Skeleton2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var node = $Chicken/PartsSkeletonContainer/Skeleton2D/left_arm_bone
+	node.transform.rotation = 20
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="World" type="Node2D"]
 position = Vector2(101, 25)
@@ -132,48 +162,50 @@ shape = SubResource("RectangleShape2D_wq4rj")
 [node name="PartsSkeletonContainer" type="Node2D" parent="Chicken"]
 
 [node name="Parts" type="Node2D" parent="Chicken/PartsSkeletonContainer"]
+script = SubResource("GDScript_gp0hx")
 
-[node name="Polygon2D" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
+[node name="Chicken_right_arm" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
 position = Vector2(496, 4)
 texture = ExtResource("11_8wilf")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(311.635, 216.297, 352.224, 231.885, 374.871, 252.179, 373.694, 260.709, 361.047, 261.297, 389.282, 289.238, 393.106, 304.532, 385.459, 308.944, 348.4, 299.532, 366.047, 318.944, 367.518, 325.709, 364.871, 329.238, 352.518, 322.768, 363.694, 340.709, 359.871, 347.768, 346.929, 344.826, 315.753, 314.826, 289.576, 284.532, 276.929, 254.826, 280.165, 231.885, 292.812, 221.003)
 uv = PackedVector2Array(311.635, 216.297, 352.224, 231.885, 374.871, 252.179, 373.694, 260.709, 361.047, 261.297, 389.282, 289.238, 393.106, 304.532, 385.459, 308.944, 348.4, 299.532, 366.047, 318.944, 367.518, 325.709, 364.871, 329.238, 352.518, 322.768, 363.694, 340.709, 359.871, 347.768, 346.929, 344.826, 315.753, 314.826, 289.576, 284.532, 276.929, 254.826, 280.165, 231.885, 292.812, 221.003)
-bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
-[node name="Polygon2D2" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
+[node name="Chicken Body" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
 position = Vector2(497.859, -0.294128)
 texture = ExtResource("12_j5j5l")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(214.471, 61.4706, 231.529, 76.7647, 243.294, 60.2941, 258.588, 65, 265.647, 70.5882, 263.294, 109.412, 273.588, 122.059, 281.529, 144.412, 285.059, 152.647, 314.765, 167.941, 332.118, 174.412, 330.059, 181.471, 330.353, 186.765, 300.941, 201.471, 315.059, 213.235, 318.294, 231.471, 313.294, 241.176, 304.765, 240.882, 323.588, 344.706, 323.588, 352.353, 241.235, 371.471, 186.235, 366.765, 136.235, 344.118, 143, 251.176, 189.471, 121.176, 180.647, 110.882, 188.294, 96.7647, 201.235, 98.8235, 187.412, 78.5294)
 uv = PackedVector2Array(214.471, 61.4706, 231.529, 76.7647, 243.294, 60.2941, 258.588, 65, 265.647, 70.5882, 263.294, 109.412, 273.588, 122.059, 281.529, 144.412, 285.059, 152.647, 314.765, 167.941, 332.118, 174.412, 330.059, 181.471, 330.353, 186.765, 300.941, 201.471, 315.059, 213.235, 318.294, 231.471, 313.294, 241.176, 304.765, 240.882, 323.588, 344.706, 323.588, 352.353, 241.235, 371.471, 186.235, 366.765, 136.235, 344.118, 143, 251.176, 189.471, 121.176, 180.647, 110.882, 188.294, 96.7647, 201.235, 98.8235, 187.412, 78.5294)
-bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
-[node name="Polygon2D3" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
+[node name="Chicken Left Arm" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
 position = Vector2(497.859, -0.294128)
 texture = ExtResource("15_l2yug")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(161.553, 195.956, 204.2, 198.897, 221.259, 208.309, 229.788, 233.015, 211.847, 269.485, 166.847, 306.544, 62.1412, 375.662, 52.7294, 373.309, 89.7882, 333.603, 75.0824, 335.956, 92.7294, 307.426, 59.4941, 333.309, 50.6706, 329.191, 87.4353, 283.603, 48.0235, 316.25, 47.1412, 306.544, 85.0824, 261.544, 72.4353, 264.779, 85.9647, 241.544, 129.494, 203.603)
 uv = PackedVector2Array(161.553, 195.956, 204.2, 198.897, 221.259, 208.309, 229.788, 233.015, 211.847, 269.485, 166.847, 306.544, 62.1412, 375.662, 52.7294, 373.309, 89.7882, 333.603, 75.0824, 335.956, 92.7294, 307.426, 59.4941, 333.309, 50.6706, 329.191, 87.4353, 283.603, 48.0235, 316.25, 47.1412, 306.544, 85.0824, 261.544, 72.4353, 264.779, 85.9647, 241.544, 129.494, 203.603)
-bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0.5, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
-[node name="Polygon2D4" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
+[node name="Chicken Left Leg" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
 position = Vector2(497.859, -0.294128)
 texture = ExtResource("14_ij70c")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(289.494, 341.25, 298.318, 364.779, 333.612, 373.309, 338.906, 378.309, 337.141, 384.191, 303.906, 377.132, 309.788, 385.956, 309.494, 391.544, 303.612, 390.368, 295.671, 378.603, 281.259, 395.074, 271.553, 398.309, 265.376, 393.015, 289.494, 368.015, 281.553, 340.956, 286.553, 334.779)
 uv = PackedVector2Array(289.494, 341.25, 298.318, 364.779, 333.612, 373.309, 338.906, 378.309, 337.141, 384.191, 303.906, 377.132, 309.788, 385.956, 309.494, 391.544, 303.612, 390.368, 295.671, 378.603, 281.259, 395.074, 271.553, 398.309, 265.376, 393.015, 289.494, 368.015, 281.553, 340.956, 286.553, 334.779)
-bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1), "Base/Bone2D3", PackedFloat32Array(0.5, 1, 0.5, 0, 0, 1, 1, 0.5, 0.5, 1, 0, 0, 0, 1, 0.5, 0.5), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Bone2D2/Bone2D", PackedFloat32Array(1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1), "Base/Bone2D3", PackedFloat32Array(0.5, 1, 0.5, 0, 0, 1, 1, 0.5, 0.5, 1, 0, 0, 0, 1, 0.5, 0.5), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
-[node name="Polygon2D5" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
-position = Vector2(497.859, -0.294128)
+[node name="Chicken Right Leg" type="Polygon2D" parent="Chicken/PartsSkeletonContainer/Parts"]
+position = Vector2(492, -7)
 texture = ExtResource("13_rn2qy")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(204.494, 358.309, 204.494, 379.485, 235.376, 389.191, 240.376, 394.485, 233.318, 396.25, 205.376, 388.897, 208.318, 401.25, 200.965, 403.015, 198.612, 392.132, 177.435, 407.132, 171.553, 401.838, 191.259, 383.309, 195.965, 358.309)
 uv = PackedVector2Array(204.494, 358.309, 204.494, 379.485, 235.376, 389.191, 240.376, 394.485, 233.318, 396.25, 205.376, 388.897, 208.318, 401.25, 200.965, 403.015, 198.612, 392.132, 177.435, 407.132, 171.553, 401.838, 191.259, 383.309, 195.965, 358.309)
-bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Body/Bone2D2", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Base/Body/Bone2D2/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D2/Bone2D", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "Base/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Bone2D3/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Chicken/PartsSkeletonContainer"]
+script = SubResource("GDScript_bt5v6")
 
 [node name="Base" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D"]
 position = Vector2(736, 299)
@@ -187,15 +219,15 @@ rest = Transform2D(1, 0, 0, 1, -3, -82)
 position = Vector2(47, 0)
 rest = Transform2D(1, 0, 0, 1, 47, 0)
 
-[node name="Bone2D" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Body/Bone2D"]
-position = Vector2(96, 84)
+[node name="left_arm_bone" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Body/Bone2D"]
+position = Vector2(89, 85)
 rest = Transform2D(1, 0, 0, 1, 96, 84)
 
 [node name="Bone2D2" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Body"]
 position = Vector2(-53, -14)
 rest = Transform2D(1, 0, 0, 1, -53, -14)
 
-[node name="Bone2D" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Body/Bone2D2"]
+[node name="right_arm_bone" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Body/Bone2D2"]
 position = Vector2(-96, 123)
 rest = Transform2D(1, 0, 0, 1, -96, 123)
 
@@ -203,7 +235,7 @@ rest = Transform2D(1, 0, 0, 1, -96, 123)
 position = Vector2(-45, 49)
 rest = Transform2D(1, 0, 0, 1, -45, 49)
 
-[node name="Bone2D" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Bone2D2"]
+[node name="left leg bone" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Bone2D2"]
 position = Vector2(0, 39)
 rest = Transform2D(1, 0, 0, 1, 0, 39)
 
@@ -211,6 +243,6 @@ rest = Transform2D(1, 0, 0, 1, 0, 39)
 position = Vector2(41, 40)
 rest = Transform2D(1, 0, 0, 1, 41, 40)
 
-[node name="Bone2D" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Bone2D3"]
-position = Vector2(11, 36)
+[node name="right leg bone" type="Bone2D" parent="Chicken/PartsSkeletonContainer/Skeleton2D/Base/Bone2D3"]
+position = Vector2(24, 46)
 rest = Transform2D(1, 0, 0, 1, 11, 36)
