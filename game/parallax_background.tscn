@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd2kplmylug2c"]
+[gd_scene load_steps=6 format=3 uid="uid://dkufpng3wmnhs"]
 
 [ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_ed5jx"]
-[ext_resource type="Texture2D" uid="uid://brqud4qp4j3jh" path="res://sprites/mountains.png" id="2_djadp"]
+[ext_resource type="Texture2D" uid="uid://b2kv5mqo8h4j6" path="res://sprites/mountain.png" id="2_1npkm"]
 [ext_resource type="Script" path="res://scripts/change.gd" id="3_j5tk1"]
 [ext_resource type="Texture2D" uid="uid://ccmgufsohg7k" path="res://sprites/thumbnail_Untitled_Artwork 2.png" id="4_qp86j"]
+
+[sub_resource type="GDScript" id="GDScript_7yt0f"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("1_ed5jx")
@@ -14,10 +16,15 @@ motion_mirroring = Vector2(1915, 2.08165e-12)
 [node name="background" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(966, 384)
 scale = Vector2(1, 0.6)
-texture = ExtResource("2_djadp")
+texture = ExtResource("2_1npkm")
 script = ExtResource("3_j5tk1")
 
-[node name="ground" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(3, 1)
+motion_mirroring = Vector2(1915, 2.08165e-12)
+
+[node name="ground" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(900, 747)
 scale = Vector2(1.50625, 0.297)
 texture = ExtResource("4_qp86j")
+script = SubResource("GDScript_7yt0f")

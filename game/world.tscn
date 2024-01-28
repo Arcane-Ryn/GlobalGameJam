@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bo3x2yj0neug8" path="res://sprites/Untitled_Artwork (10).PNG" id="21_hjjum"]
 [ext_resource type="Texture2D" uid="uid://6gvvvxkchifg" path="res://sprites/yarn.PNG" id="22_fici8"]
 [ext_resource type="AudioStream" uid="uid://dq1wlarl5e3vd" path="res://music/BeepBox-Song.wav" id="23_xnb2d"]
-[ext_resource type="PackedScene" uid="uid://bd2kplmylug2c" path="res://parallax_background.tscn" id="27_2pr06"]
+[ext_resource type="PackedScene" uid="uid://dkufpng3wmnhs" path="res://parallax_background.tscn" id="27_2pr06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mrhx"]
 size = Vector2(58, 63)
