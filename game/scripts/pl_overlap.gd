@@ -10,5 +10,9 @@ func _ready():
 func _process(delta):
 	if has_overlapping_areas():
 		var parent = get_parent()
+		if parent.position.x < 101:
+			parent = parent.get_parent()
+			parent.queue_free()
+			return
 		parent.freeze()
 		parent.velocity = Vector2(-2000, -200)
