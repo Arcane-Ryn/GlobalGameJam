@@ -10,6 +10,8 @@ func _ready():
 func _process(delta):
 	if hovering and Input.is_action_just_pressed("select"):
 		get_tree().change_scene_to_file("res://world.tscn")
+		var parent = get_parent()
+		###transfer info of character selection
 
 
 func _on_mouse_entered():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=21 format=3 uid="uid://byr510ght4f1m"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://5mtesb0lr7x1" path="res://sprites/thumbnail_Untitled_Artwork.png" id="6_u1sh0"]
 [ext_resource type="Script" path="res://scripts/change.gd" id="7_b1qdf"]
 [ext_resource type="Texture2D" uid="uid://ccmgufsohg7k" path="res://sprites/thumbnail_Untitled_Artwork 2.png" id="7_h2trf"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="12_llobl"]
+[ext_resource type="Texture2D" uid="uid://v5xrxwjceuu7" path="res://animations/BH0.PNG" id="13_6et4s"]
+[ext_resource type="Script" path="res://scripts/black_hole_anim.gd" id="14_xslga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mrhx"]
 size = Vector2(57, 48)
@@ -136,3 +139,21 @@ position = Vector2(-1446, 210)
 scale = Vector2(1, 0.6)
 texture = ExtResource("6_u1sh0")
 flip_h = true
+
+[node name="timer" type="Node2D" parent="."]
+script = ExtResource("12_llobl")
+
+[node name="score" type="Sprite2D" parent="timer"]
+
+[node name="Label" type="Label" parent="timer"]
+offset_left = -91.0
+offset_top = -17.0
+offset_right = -55.0
+offset_bottom = 6.0
+
+[node name="BlackHole" type="Node2D" parent="."]
+
+[node name="black_hole" type="Sprite2D" parent="BlackHole"]
+position = Vector2(480, 235)
+texture = ExtResource("13_6et4s")
+script = ExtResource("14_xslga")
