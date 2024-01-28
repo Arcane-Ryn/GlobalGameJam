@@ -10,9 +10,10 @@ var hold = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if Input.is_action_just_pressed("change"):
-		hold = !hold
-		if hold:
-			texture = load("res://sprites/thumbnail_Untitled_Artwork 1.png")
-		else:
-			texture = load("res://sprites/thumbnail_Untitled_Artwork.png")
+	#if Input.is_action_just_pressed("change"):
+		#hold = !hold
+		#if hold:
+			#texture = load("res://sprites/thumbnail_Untitled_Artwork 1.png")
+		#else:
+			#texture = load("res://sprites/thumbnail_Untitled_Artwork.png")
+	pass

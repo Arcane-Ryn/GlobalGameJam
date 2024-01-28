@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=72 format=3 uid="uid://byr510ght4f1m"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://5mtesb0lr7x1" path="res://sprites/thumbnail_Untitled_Artwork.png" id="6_u1sh0"]
 [ext_resource type="Script" path="res://scripts/change.gd" id="7_b1qdf"]
 [ext_resource type="Texture2D" uid="uid://ccmgufsohg7k" path="res://sprites/thumbnail_Untitled_Artwork 2.png" id="7_h2trf"]
+[ext_resource type="Texture2D" uid="uid://brqud4qp4j3jh" path="res://sprites/mountains.png" id="11_j357f"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="12_llobl"]
 [ext_resource type="Texture2D" uid="uid://v5xrxwjceuu7" path="res://animations/BH0.PNG" id="13_6et4s"]
 [ext_resource type="Script" path="res://scripts/black_hole_anim.gd" id="14_xslga"]
@@ -25,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bo3x2yj0neug8" path="res://sprites/Untitled_Artwork (10).PNG" id="21_hjjum"]
 [ext_resource type="Texture2D" uid="uid://6gvvvxkchifg" path="res://sprites/yarn.PNG" id="22_fici8"]
 [ext_resource type="AudioStream" uid="uid://dq1wlarl5e3vd" path="res://music/BeepBox-Song.wav" id="23_xnb2d"]
+[ext_resource type="PackedScene" uid="uid://bd2kplmylug2c" path="res://parallax_background.tscn" id="27_2pr06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mrhx"]
 size = Vector2(58, 63)
@@ -471,6 +473,7 @@ script = ExtResource("5_44ava")
 stream = ExtResource("6_fl0xx")
 
 [node name="wall" type="Node2D" parent="."]
+visible = false
 position = Vector2(476, 511)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall"]
@@ -512,13 +515,15 @@ shape = SubResource("RectangleShape2D_4ak7m")
 metadata/_edit_lock_ = true
 
 [node name="background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(473, 210)
 scale = Vector2(1, 0.6)
-texture = ExtResource("6_u1sh0")
+texture = ExtResource("11_j357f")
 script = ExtResource("7_b1qdf")
 metadata/_edit_lock_ = true
 
 [node name="ground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(439, 505)
 scale = Vector2(1.5, 0.297)
 texture = ExtResource("7_h2trf")
@@ -531,6 +536,7 @@ position = Vector2(44.0001, 50.505)
 shape = SubResource("RectangleShape2D_wq4rj")
 
 [node name="background2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1446, 210)
 scale = Vector2(1, 0.6)
 texture = ExtResource("6_u1sh0")
@@ -840,4 +846,7 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_xnb2d")
+volume_db = 5.0
 autoplay = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("27_2pr06")]
