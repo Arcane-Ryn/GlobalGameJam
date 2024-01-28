@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if has_overlapping_areas():
+		$AudioStreamPlayer2D.play()
 		var parent = get_parent()
 		if parent.position.x < -400:
 			parent = parent.get_parent()
