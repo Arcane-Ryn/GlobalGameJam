@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/highlight_play.gd" id="3_dh23e"]
 [ext_resource type="Script" path="res://scripts/char_highlight.gd" id="4_ar6hy"]
 [ext_resource type="Texture2D" uid="uid://cu20h2ekmdilg" path="res://sprites/Untitled_Artwork.PNG" id="4_ymeuf"]
-[ext_resource type="Texture2D" uid="uid://xyv4ktjkojrt" path="res://sprites/Untitled_Artwork (1).PNG" id="5_xmdty"]
+[ext_resource type="Texture2D" uid="uid://xyv4ktjkojrt" path="res://sprites/Giraffe.PNG" id="5_xmdty"]
 [ext_resource type="Texture2D" uid="uid://dwn8mrfgomrmf" path="res://sprites/Untitled_Artwork (2).PNG" id="6_b1tc1"]
 [ext_resource type="Script" path="res://scripts/char_highlight2.gd" id="6_ej8bf"]
 [ext_resource type="Script" path="res://scripts/char_highlight3.gd" id="8_pigu4"]
