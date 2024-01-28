@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	if has_overlapping_areas():
 		var parent = get_parent()
-		if parent.position.x < 101:
+		if parent.position.x < -400:
 			parent = parent.get_parent()
 			parent.queue_free()
 			return
