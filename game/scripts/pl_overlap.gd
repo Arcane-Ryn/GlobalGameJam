@@ -12,6 +12,11 @@ func _process(delta):
 		$AudioStreamPlayer2D.play()
 		var parent = get_parent()
 		if parent.position.x < -400:
+			var world = parent.get_parent().get_parent()
+			var timer = world.get_node("timer")
+			timer.stop()
+			var camera = world.get_node("Camera2D")
+			camera.position.x = 3000
 			parent = parent.get_parent()
 			parent.queue_free()
 			return
