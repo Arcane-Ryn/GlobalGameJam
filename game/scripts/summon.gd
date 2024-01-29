@@ -15,6 +15,12 @@ var projectiles = ["proj1", "proj2", "proj3", "proj4", "proj5", "proj6", "proj7"
 	
 func first_object(count):
 	if count == 0:
+		var camera = get_node("Camera2D")
+		camera.position.x = 3000
+		var label = get_node("end").get_node("Label")
+		label.text = "You Won!\nPress space to restart\n\nYou survived all of the"
+		var label2 = get_node("end").get_node("Label2")
+		label2.text = get_node("timer").get_node("Label").text
 		return
 	await get_tree().create_timer(0.7).timeout
 	var guy = get_node("guy")
