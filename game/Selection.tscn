@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bndsgefxd6b7b"]
+[gd_scene load_steps=15 format=3 uid="uid://bndsgefxd6b7b"]
 
 [ext_resource type="Texture2D" uid="uid://xdpjawwmi04o" path="res://sprites/thumbnail_Untitled_Artwork 1.png" id="1_un5hn"]
 [ext_resource type="Texture2D" uid="uid://demxje26enhj4" path="res://GUI/Default.png" id="2_0ymad"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dwn8mrfgomrmf" path="res://sprites/Untitled_Artwork (2).PNG" id="6_b1tc1"]
 [ext_resource type="Script" path="res://scripts/char_highlight2.gd" id="6_ej8bf"]
 [ext_resource type="Script" path="res://scripts/char_highlight3.gd" id="8_pigu4"]
+[ext_resource type="AudioStream" uid="uid://b3kqdwibpg4ao" path="res://music/Title theme.wav" id="10_4rowe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jr43q"]
 size = Vector2(320, 163)
@@ -98,6 +99,10 @@ metadata/_edit_lock_ = true
 [node name="box" type="Sprite2D" parent="char3_body"]
 position = Vector2(-313, -126)
 scale = Vector2(13.25, 15.875)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4rowe")
+autoplay = true
 
 [connection signal="mouse_entered" from="start_body" to="start_body" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="start_body" to="start_body" method="_on_mouse_exited"]

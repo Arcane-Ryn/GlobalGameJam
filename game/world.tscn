@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bdbi8kylb88to" path="res://sprites/Untitled_Artwork (9).PNG" id="20_81xx8"]
 [ext_resource type="Texture2D" uid="uid://bo3x2yj0neug8" path="res://sprites/Untitled_Artwork (10).PNG" id="21_hjjum"]
 [ext_resource type="Texture2D" uid="uid://6gvvvxkchifg" path="res://sprites/yarn.PNG" id="22_fici8"]
-[ext_resource type="AudioStream" uid="uid://dq1wlarl5e3vd" path="res://music/BeepBox-Song.wav" id="23_xnb2d"]
+[ext_resource type="AudioStream" uid="uid://c26lv7tjrppfw" path="res://music/Main Theme.wav" id="25_62y6q"]
 [ext_resource type="Script" path="res://scripts/end.gd" id="26_d2itb"]
 [ext_resource type="Texture2D" uid="uid://xdpjawwmi04o" path="res://sprites/thumbnail_Untitled_Artwork 1.png" id="26_etxxb"]
 [ext_resource type="Script" path="res://scripts/toss.gd" id="28_obyfg"]
@@ -850,7 +850,7 @@ shape = SubResource("CircleShape2D_4xxg7")
 metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("23_xnb2d")
+stream = ExtResource("25_62y6q")
 autoplay = true
 
 [node name="end" type="Node2D" parent="."]
