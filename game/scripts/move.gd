@@ -11,6 +11,7 @@ var left = "ui_left"
 var jump = "ui_accept"
 var anim_count = 1
 var count = 3
+var anim = Global.test
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -34,12 +35,14 @@ func _physics_process(delta):
 				anim_count += 1
 			else:
 				anim_count = 1
-			sprite.texture = load("res://animations/C" + str(anim_count) + ".PNG")
+			sprite.texture = load("res://animations/" + str(anim) + str(anim_count) + ".PNG")
 			count = 3
 		count -= 1
 	else:
-		sprite.texture = load("res://animations/C1.PNG")
+		sprite.texture = load("res://animations/" + str(anim) + "1.PNG")
 		velocity.x = move_toward(velocity.x, 0, 50)
+	if position.x > 400 and velocity.x > 0:
+		velocity.x = 0
 	
 	move_and_slide()
 

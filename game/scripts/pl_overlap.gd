@@ -21,4 +21,4 @@ func _process(delta):
 			parent.queue_free()
 			return
 		parent.freeze()
-		parent.velocity = Vector2(-2000, -200)
+		parent.velocity = Vector2(-1500, -150)

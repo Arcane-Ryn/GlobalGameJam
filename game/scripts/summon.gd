@@ -16,7 +16,10 @@ var projectiles = ["proj1", "proj2", "proj3", "proj4", "proj5", "proj6", "proj7"
 func first_object(count):
 	if count == 0:
 		return
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.7).timeout
+	var guy = get_node("guy")
+	guy.throw(1)
+	await get_tree().create_timer(0.3).timeout
 	var num = rng.randf_range(0, projectiles.size())
 	var proj = projectiles[num]
 	proj = proj + "/CharacterBody2D"

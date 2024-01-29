@@ -9,9 +9,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if hovering and Input.is_action_just_pressed("select"):
-		get_tree().change_scene_to_file("res://world.tscn")
 		var parent = get_parent()
-		###transfer info of character selection
+		if parent.get_node("char1_body") != null:
+			Global.test = "C"
+		elif parent.get_node("char2_body") != null:
+			Global.test = "G"
+		else:
+			Global.test = "T"
+		get_tree().change_scene_to_file("res://world.tscn")
 
 
 func _on_mouse_entered():

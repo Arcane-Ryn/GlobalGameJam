@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://byr510ght4f1m"]
+[gd_scene load_steps=74 format=3 uid="uid://byr510ght4f1m"]
 
 [ext_resource type="Script" path="res://scripts/summon.gd" id="1_4asem"]
 [ext_resource type="Texture2D" uid="uid://co2r1try575vo" path="res://sprites/OIP.jpg" id="1_rnhnd"]
@@ -16,19 +16,17 @@
 [ext_resource type="Script" path="res://scripts/score.gd" id="12_llobl"]
 [ext_resource type="Texture2D" uid="uid://v5xrxwjceuu7" path="res://animations/BH0.PNG" id="13_6et4s"]
 [ext_resource type="Script" path="res://scripts/black_hole_anim.gd" id="14_xslga"]
-[ext_resource type="Texture2D" uid="uid://rhb8546ijcw2" path="res://sprites/Untitled_Artwork (3).PNG" id="15_07gfb"]
-[ext_resource type="Texture2D" uid="uid://7wxams1hf44" path="res://sprites/Untitled_Artwork (5).PNG" id="16_4ehay"]
-[ext_resource type="Texture2D" uid="uid://gskkgu0e8rfj" path="res://sprites/Untitled_Artwork (6).PNG" id="17_gae8i"]
-[ext_resource type="Texture2D" uid="uid://do44jil6s2nik" path="res://sprites/Untitled_Artwork (7).PNG" id="18_7gvnc"]
-[ext_resource type="Texture2D" uid="uid://dgqngrd22ge3" path="res://sprites/Untitled_Artwork (8).PNG" id="19_ngb8n"]
-[ext_resource type="Texture2D" uid="uid://bdbi8kylb88to" path="res://sprites/Untitled_Artwork (9).PNG" id="20_81xx8"]
-[ext_resource type="Texture2D" uid="uid://bo3x2yj0neug8" path="res://sprites/Untitled_Artwork (10).PNG" id="21_hjjum"]
-[ext_resource type="Texture2D" uid="uid://6gvvvxkchifg" path="res://sprites/yarn.PNG" id="22_fici8"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (3).PNG" id="15_07gfb"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (5).PNG" id="16_4ehay"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (6).PNG" id="17_gae8i"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (7).PNG" id="18_7gvnc"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (8).PNG" id="19_ngb8n"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (9).PNG" id="20_81xx8"]
+[ext_resource type="Texture2D" path="res://sprites/Untitled_Artwork (10).PNG" id="21_hjjum"]
+[ext_resource type="Texture2D" path="res://sprites/yarn.PNG" id="22_fici8"]
 [ext_resource type="AudioStream" uid="uid://dq1wlarl5e3vd" path="res://music/BeepBox-Song.wav" id="23_xnb2d"]
 [ext_resource type="Script" path="res://scripts/end.gd" id="26_d2itb"]
 [ext_resource type="Texture2D" uid="uid://xdpjawwmi04o" path="res://sprites/thumbnail_Untitled_Artwork 1.png" id="26_etxxb"]
-[ext_resource type="Script" path="res://scripts/toss.gd" id="28_obyfg"]
-[ext_resource type="Texture2D" uid="uid://cq40rtg8s6bk2" path="res://animations/M1.PNG" id="29_rbjsx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mrhx"]
 size = Vector2(58, 63)
@@ -52,7 +50,7 @@ size = Vector2(1269.33, 680.135)
 size = Vector2(72, 575)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3m8ua"]
-size = Vector2(45, 564)
+size = Vector2(52, 564)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3i43"]
 size = Vector2(97, 136)
@@ -576,7 +574,7 @@ shape = SubResource("RectangleShape2D_gptyk")
 [node name="Area2D" type="Area2D" parent="BlackHole"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackHole/Area2D"]
-position = Vector2(-30.5, 141)
+position = Vector2(-27, 141)
 shape = SubResource("RectangleShape2D_3m8ua")
 
 [node name="proj1" type="Node2D" parent="."]
@@ -886,11 +884,3 @@ label_settings = SubResource("LabelSettings_uis3g")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
-
-[node name="guy" type="Node2D" parent="."]
-position = Vector2(1008, 319)
-script = ExtResource("28_obyfg")
-
-[node name="Sprite2D" type="Sprite2D" parent="guy"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("29_rbjsx")
