@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkufpng3wmnhs"]
 
-[ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_ed5jx"]
+[ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_ed5jx"]
 [ext_resource type="Texture2D" uid="uid://b2kv5mqo8h4j6" path="res://sprites/mountain.png" id="2_1npkm"]
 [ext_resource type="Script" path="res://scripts/change.gd" id="3_j5tk1"]
 [ext_resource type="Texture2D" uid="uid://ccmgufsohg7k" path="res://sprites/thumbnail_Untitled_Artwork 2.png" id="4_qp86j"]
